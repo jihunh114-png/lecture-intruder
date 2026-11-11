@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101519" />
+    <meta name="description" content="강의실을 누비는 불청객 파리의 레트로 아케이드 생존 게임" />
+    <title>강의시간의 불청객 — 8-bit lecture arcade</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#top" aria-label="강의시간의 불청객 홈">
+          <span class="brand-mark">✳</span><span>NO CLASS, JUST CHAOS</span>
+        </a>
+        <span class="edition"><i></i> ARCADE EDITION&nbsp; 01</span>
+      </header>
+
+      <section class="intro" id="top">
+        <div class="eyebrow"><span>오늘의 강의</span><span class="eyebrow-line"></span><span>생존학 개론</span></div>
+        <h1>강의시간의<br /><em>불청객</em><span class="title-bug">✹</span></h1>
+        <p class="lede">조용한 강의실에 날아든 수상한 파리 한 마리.<br />교수님의 시선을 피해 간식을 싹쓸이해라.</p>
+      </section>
+
+      <section class="game-section" aria-label="게임">
+        <div class="game-frame">
+          <div class="game-topline">
+            <div class="live-label"><span class="live-dot"></span> LIVE LECTURE</div>
+            <div class="hud">
+              <div class="hud-item"><span class="hud-label">간식</span><b id="score">000</b></div>
+              <div class="hud-item time-item"><span class="hud-label">남은 시간</span><b id="time">45</b></div>
+              <div class="hud-item"><span class="hud-label">목숨</span><b id="lives">♥♥♥</b></div>
+            </div>
+          </div>
+          <div class="canvas-wrap" id="canvasWrap">
+            <canvas id="game" width="960" height="540" aria-label="게임 화면"></canvas>
+            <div class="screen" id="screen">
+              <div class="screen-card">
+                <div class="screen-stamp">강의실 출입 금지</div>
+                <p class="screen-kicker" id="screenKicker">긴급 공지 · 1교시</p>
+                <h2 id="screenTitle">불청객<br /><span>출몰!</span></h2>
+                <p class="screen-copy" id="screenCopy">교수님의 손바닥을 피해<br />간식 부스러기를 모아라.</p>
+                <button class="play-button" id="playButton">강의실에 난입하기 <span>↗</span></button>
+                <div class="screen-hint">이동 <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> 또는 방향키</div>
+              </div>
+            </div>
+          </div>
+          <div class="game-footer">
+            <span>⟵ <b>이동</b> &nbsp;·&nbsp; 교수님을 피해 부스러기 수집</span>
+            <span class="sound-wrap"><span id="soundLabel">사운드 ON</span><button class="sound-button" id="soundButton" aria-label="사운드 끄기">♫</button></span>
+          </div>
+        </div>
+        <div class="mobile-controls" aria-label="터치 이동 조작">
+          <button data-dir="up" aria-label="위로 이동">↑</button>
+          <div><button data-dir="left" aria-label="왼쪽 이동">←</button><button data-dir="down" aria-label="아래로 이동">↓</button><button data-dir="right" aria-label="오른쪽 이동">→</button></div>
+        </div>
+      </section>
+
+      <section class="info-row">
+        <article class="info-card"><span class="info-index">01 / OBJECTIVE</span><h3>45초만 버텨!</h3><p>교수님의 손바닥에 잡히지 않고 간식 부스러기를 모으면 점수가 올라가.</p></article>
+        <article class="info-card"><span class="info-index">02 / WARNING</span><h3>그림자를 조심해</h3><p>교수님이 책상을 내리치기 전에 붉은 경고 구역에서 재빨리 탈출!</p></article>
+        <article class="info-card score-card"><span class="info-index">PERSONAL BEST</span><div class="best-line"><b id="best">000</b><span>PTS</span></div><p>이번 학기 최고 성적</p></article>
+      </section>
+
+      <footer class="page-footer"><span>© 2026 불청객 스튜디오</span><span>MADE FOR THE BACK ROW <b>✳</b></span></footer>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>
